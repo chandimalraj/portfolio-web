@@ -9,10 +9,13 @@ import AboutSection from "../sections/AboutSection/AboutSection";
 import TechSlider from "../sections/TechSlider/TechSlider";
 import ProjectSection from "../sections/ProjectSection/ProjectSection";
 import ProjectSectionEnd from "../sections/ProjectSectionEnd/ProjectSectionEnd";
+import ParticleBackground from "../AnimationComponents/Particle";
+
 
 export default function Home() {
   return (
     <div style={{ position: "relative", height: "100vh" }}>
+      
       <ResponsiveAppBar />
       <HomeSection />
       <AboutSection />

@@ -7,8 +7,7 @@ import animationIcon from "../../../assets/animations/Animation - 1720164831855.
 import { useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import ProjectCard from "../ProjectSection/ProjectCard/ProjectCard";
-import QA from '../../../assets/images/projects/QA.PNG'
-
+import QA from "../../../assets/images/projects/QA.PNG";
 
 const ProjectSectionEnd = () => {
   const { scrollYProgress } = useScroll();
@@ -47,16 +46,23 @@ const ProjectSectionEnd = () => {
       id="tech-slider"
       style={{
         // height: "80vh",
-        background: "white",
+        background: "transparent",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        paddingBottom:'50px'
+        paddingBottom: "50px",
       }}
     >
-      <Grid container>
-       
+      <Grid
+        container
+        sx={{
+          width: {
+            lg: "1200px",
+            xl: "1500px",
+          },
+        }}
+      >
         <Grid
           item
           lg={3}
@@ -66,7 +72,6 @@ const ProjectSectionEnd = () => {
             justifyContent: "center",
             alignItems: "center",
             width: "100%",
-            
           }}
         >
           <motion.div
@@ -94,7 +99,7 @@ const ProjectSectionEnd = () => {
               borderRadius: "8px",
             }}
           >
-            <ProjectCard/>
+            <ProjectCard />
           </motion.div>
         </Grid>
         <Grid
@@ -105,7 +110,7 @@ const ProjectSectionEnd = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: "100%",            
+            width: "100%",
           }}
         >
           <motion.div
@@ -133,7 +138,11 @@ const ProjectSectionEnd = () => {
               borderRadius: "8px",
             }}
           >
-            <ProjectCard img={QA} title={'Application For QA'} technologies={'React Mui'}/>
+            <ProjectCard
+              img={QA}
+              title={"Application For QA"}
+              technologies={"React Mui"}
+            />
           </motion.div>
         </Grid>
         <Grid
@@ -145,7 +154,6 @@ const ProjectSectionEnd = () => {
             justifyContent: "center",
             alignItems: "center",
             width: "100%",
-            
           }}
         >
           <motion.div
@@ -173,7 +181,7 @@ const ProjectSectionEnd = () => {
               borderRadius: "8px",
             }}
           >
-            <ProjectCard/>
+            <ProjectCard />
           </motion.div>
         </Grid>
         <Grid
@@ -185,7 +193,6 @@ const ProjectSectionEnd = () => {
             justifyContent: "center",
             alignItems: "center",
             width: "100%",
-            
           }}
         >
           <motion.div
@@ -213,7 +220,7 @@ const ProjectSectionEnd = () => {
               borderRadius: "8px",
             }}
           >
-            <ProjectCard/>
+            <ProjectCard />
           </motion.div>
         </Grid>
       </Grid>

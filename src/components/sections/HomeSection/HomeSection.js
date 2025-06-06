@@ -6,10 +6,12 @@ import Lottie from "lottie-react";
 import animationData from "../../../assets/animations/Animation - 1720154126904.json";
 import "./home-section.css";
 import { motion } from "framer-motion";
+import ParticleBackground from "../../AnimationComponents/Particle";
 
 const HomeSection = () => {
   return (
     <section id="home" className="responsive-home-section">
+      <ParticleBackground sectionId="home-particles"/>
       <Grid container>
         <Grid
           item
@@ -42,6 +44,7 @@ const HomeSection = () => {
               width: "200px",
               borderRadius: "100px",
               marginBottom: "30px",
+              zIndex:"2"
             }}
           >
             <img

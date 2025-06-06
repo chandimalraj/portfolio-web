@@ -6,6 +6,7 @@ import animationData from "../../../assets/animations/Animation - 1720162723498.
 import animationIcon from "../../../assets/animations/Animation - 1720164831855.json";
 import { useScroll } from "framer-motion";
 import { motion } from "framer-motion";
+import ParticleBackground from "../../AnimationComponents/Particle";
 
 const AboutSection = () => {
   const { scrollYProgress } = useScroll();
@@ -43,6 +44,7 @@ const AboutSection = () => {
       id="about"
       style={{  backgroundColor: "transparent" }}
     >
+      {/* <ParticleBackground/> */}
       <Grid container>
         <Grid
           item

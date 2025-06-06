@@ -5,14 +5,15 @@ import Slider from "react-slick/lib/slider";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
-import javaLogo from '../../../assets/images/java_logo.svg'
-import reactLogo from '../../../assets/images/react_logo.png'
-import mysqlLogo from '../../../assets/images/mysql_logo.svg'
-import mongoLogo from '../../../assets/images/mongodb_logo.svg'
-import nodeLogo from '../../../assets/images/node_logo.svg'
-import './tech-slider.css'
+import javaLogo from "../../../assets/images/java_logo.svg";
+import reactLogo from "../../../assets/images/react_logo_.svg";
+import mysqlLogo from "../../../assets/images/mysql_logo.svg";
+import mongoLogo from "../../../assets/images/mongodb_logo.svg";
+import nodeLogo from "../../../assets/images/node_logo.svg";
+import "./tech-slider.css";
+import ParticleBackground from "../../AnimationComponents/Particle";
 
-const Item = (inView , src) => {
+const Item = (inView, src) => {
   return (
     <Grid item lg={4}>
       <motion.div
@@ -30,8 +31,16 @@ const Item = (inView , src) => {
           },
         }}
       >
-        <Paper sx={{ height: "200px", margin: "10px",display:'flex',flexDirection:'row',justifyContent:'center' }}>
-          <img src={src} width="auto"/>
+        <Paper
+          sx={{
+            height: "200px",
+            margin: "10px",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
+        >
+          <img src={src} width="100%" />
         </Paper>
       </motion.div>
     </Grid>
@@ -76,13 +85,26 @@ export default function TechSlider() {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 700, // Below 700px
+        settings: {
+          slidesToShow: 2, // Show 2 items
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480, // Below 480px
+        settings: {
+          slidesToShow: 1, // Show 1 item for very small screens
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
-    <section
-      ref={ref}
-      id="tech-slider"
-      className="responsive-section"
-    >
+    <section ref={ref} id="tech-slider" className="responsive-section">
+      <ParticleBackground sectionId="tech-slider-particles"/>
       <Typography
         sx={{
           color: "white",
@@ -96,13 +118,13 @@ export default function TechSlider() {
       >
         Technologies
       </Typography>
-      <div style={{ width: "75%" }}>
+      <div className="tech-container">
         <Slider {...settings}>
-          {Item(inView,javaLogo)}
-          {Item(inView,nodeLogo)}
-          {Item(inView,reactLogo)}
-          {Item(inView,mongoLogo)}
-          {Item(inView,mysqlLogo)}
+          {Item(inView, javaLogo)}
+          {Item(inView, nodeLogo)}
+          {Item(inView, reactLogo)}
+          {Item(inView, mongoLogo)}
+          {Item(inView, mysqlLogo)}
         </Slider>
       </div>
     </section>
